@@ -11,7 +11,7 @@ npm i ts-function
 Execute up to 9 functions with arity 1 in chain, starting with value set as first argument, which is then passed as input to first function. As result we get output from last function. Works similar to `|>` operator from F#
 
 ```typescript
-import { pipe } from "./index"
+import { pipe } from "ts-function"
 
 const obj = {
   a: 1,
@@ -32,6 +32,8 @@ const result: string[] = pipe(
 Compose up to 9 functions with arity 1 into another function, passing output from previous function as input for next function. Functions are executed from left to right (Typescript can't work with other direction). For compose to work with generic functions we need to specify output function signature or explicity set argument type in first function.
 
 ```typescript
+import { compose } from "ts-function"
+
 type AB = { a: number; b: number }
 const fun: (x: AB) => AB = compose(map((x) => x * 2))
 const fun: (x: AB) => boolean = compose(map((x) => x * 2), some((x) => x > 10))
