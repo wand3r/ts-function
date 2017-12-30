@@ -58,8 +58,3 @@ type Compose = {
 }
 export const compose = ((...fns: ((x: any) => any)[]) => (x: any) =>
   fns.reduce((acc, fn) => fn(acc), x)) as Compose
-
-export type Compose2 = {
-  <T11, T12, R>(fn1: (x: T12, y: T12) => R): (x: T12, y: T12) => R
-}
-export declare const compose2: Compose2

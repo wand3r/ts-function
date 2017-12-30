@@ -1,4 +1,4 @@
-import { compose, compose2 } from "./index"
+import { compose } from "./index"
 import { map, filter, mapToArray, some } from "ts-object"
 
 describe("compose", () => {
